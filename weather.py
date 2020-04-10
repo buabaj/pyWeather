@@ -25,7 +25,9 @@ if x['cod'] != '404':
     q = x['wind']
     wind_speed = q['speed']
     wind_direction = q['deg']
+    k = x['clouds']
+    cloudliness = k['all']
 
-    print('Temperature (in Kelvin unit) = ' + str(current_temperature) + '\n Atmospheric Pressure (in hPa unit) = ' + str(current_pressure) + '\n Humidity (in percentage) = ' + str(current_humidity) + '\n Wind Speed (in m/s) = ' + str(wind_speed) + '\n Wind Direction (in degrees) = ' + str(wind_direction) +  '\n Weather Description = ' + str(weather_description) )
+    print('Temperature (in Kelvin unit) = ' + str(current_temperature) + '\n Atmospheric Pressure (in hPa unit) = ' + str(current_pressure) + '\n Humidity (in percentage) = ' + str(current_humidity) + '\n Wind Speed (in m/s) = ' + str(wind_speed) + '\n Wind Direction (in degrees) = ' + str(wind_direction) + '\n Cloudliness (in percentage) = ' + str(cloudliness) +  '\n Weather Description = ' + str(weather_description) )
 else:
     print('City Not Found')
