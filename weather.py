@@ -2,7 +2,7 @@
 import requests, json
 
 #enter your API key from openweathermap.org here
-api_key = 'Your API key goes here'
+api_key = '65bcac9d136f5128a5cdadec9b8fdc9f'
 
 #base url to store url from api
 base_url = "http://api.openweathermap.org/data/2.5/weather?"
@@ -14,7 +14,7 @@ complete_url = base_url + 'appid=' + api_key + '&q=' + city_name
 response = requests.get(complete_url)
 x = response.json()
 
-#checking validity f city name
+#checking validity of city name
 if x['cod'] != '404':
     y = x['main']
     current_temperature = y['temp']
@@ -28,6 +28,6 @@ if x['cod'] != '404':
     k = x['clouds']
     cloudliness = k['all']
 
-    print('Temperature (in Kelvin unit) = ' + str(current_temperature) + '\n Atmospheric Pressure (in hPa unit) = ' + str(current_pressure) + '\n Humidity (in percentage) = ' + str(current_humidity) + '\n Wind Speed (in m/s) = ' + str(wind_speed) + '\n Wind Direction (in degrees) = ' + str(wind_direction) + '\n Cloudliness (in percentage) = ' + str(cloudliness) +  '\n Weather Description = ' + str(weather_description) )
+    print('Temperature (in Kelvin) = ' + str(current_temperature) + '\n Atmospheric Pressure (in hPa) = ' + str(current_pressure) + '\n Humidity (in percentage) = ' + str(current_humidity) + '\n Wind Speed (in m/s) = ' + str(wind_speed) + '\n Wind Direction (in degrees) = ' + str(wind_direction) + '\n Cloudliness (in percentage) = ' + str(cloudliness) +  '\n Weather Description = ' + str(weather_description) )
 else:
     print('City Not Found')
